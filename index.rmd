@@ -1,0 +1,37 @@
+---
+name: "Qimin Zhang"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "Resume"
+      href: resume.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<qz2392@cumc.columbia.edu>
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/qiminzhang/
+    - icon: fa-github fa-lg
+      href: https://github.com/zhangqimin17
+output:
+  html_document:
+    theme: journal
+---
+
+# Qimin Zhang
+
+First-year MS student in Biostatistics, Theory & Method track
+
+Columbia University Mailman School of Public Health
+
+
+### About
+
+I am currently pursuing master's degree in Biostatistics at Columbia University. Before this, I received my bachelor's degree in chemistry at Sun Yat-sen University, Guangzhou, China. 
+
+The courses I am taking in Fall 2019 include Probability, Data Science 1, Biostatistical Method 1 and Principle of Epidemiology, which provided me with a well-rounded quantitative background including knowledge of statistics, programming language like R, and critical thinking skills.
+
+My full resume is available [here](resume.html).
+
+I am open to any summer 2020 data analyst intern roles. Contact me at 646-387-3561!
+
+

@@ -1,0 +1,16 @@
+name: "Qimin Zhang"
+output_dir: "."
+navbar:
+  title: "Home"
+  right:
+    - text: "Resume"
+      href: resume.html
+    - icon: fa-envelope fa-lg
+      href: mailto:<qz2392@cumc.columbia.edu>
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/qiminzhang/
+    - icon: fa-github fa-lg
+      href: https://github.com/zhangqimin17
+output:
+  html_document:
+    theme: journal
