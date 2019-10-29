@@ -1,0 +1,78 @@
+---
+title: "NY_noaa dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+library(p8105.datasets)
+library(plotly)
+```
+
+```{r}
+data("ny_noaa")
+set.seed(20191026)
+ny_noaa = 
+  ny_noaa %>% 
+  drop_na() %>% 
+  sample_n(5000) %>% 
+  mutate(
+    date = as.Date(date),
+    prcp = as.numeric(prcp),
+    snow = as.numeric(snow),
+    snwd = as.numeric(snwd),
+    tmax = as.numeric(tmax),
+    tmin = as.numeric(tmin),
+    tmin = tmin / 10,
+    tmax = tmax / 10
+  )
+```
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+ny_noaa %>% 
+  plot_ly(x = ~tmin, y = ~tmax, type = "scatter", mode = "markers",
+          color = ~prcp, alpha = 0.5)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+ny_noaa %>% 
+  filter(
+    id %in% c("USC00300343", "USC00304808", "USC00301152", "USC00308936", "USC00305635",
+              "USW00014732", "USC00304791", "USC00301761", "USC00307705", "USC00305512")
+  ) %>% 
+  plot_ly(x = ~id, y = ~tmax, type = "box", mode = "markers",
+          color = ~id, alpha = 0.5)
+```
+
+### Chart C
+
+```{r}
+ny_noaa %>%
+ filter(
+    id %in% c("USC00300343", "USC00304808", "USC00301152", "USC00308936", "USC00305635",
+              "USW00014732", "USC00304791", "USC00301761", "USC00307705", "USC00305512")
+  ) %>% 
+  plot_ly(x = ~id, y = ~tmax, type = "bar", mode = "markers",
+          color = ~id, alpha = 0.5)
+```
+
+```{r}
+rmarkdown::render("flexdashboard.Rmd", output_format = "flexdashboard::flex_dashboard")
+```
+
