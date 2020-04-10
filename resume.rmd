@@ -19,7 +19,7 @@ output:
 
 ### My Resume
 
-![](Resume.jpg)
+![](Resume.png)
 
 
 
